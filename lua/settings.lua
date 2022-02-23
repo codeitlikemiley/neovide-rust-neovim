@@ -1,5 +1,3 @@
-local nnoremap = require("lua.utils.nnoremap")
-
 vim.opt.undodir = os.getenv ( "HOME" ) .. "/.undodir"
 vim.opt.undofile = true
 vim.opt.showmatch = true
@@ -55,9 +53,6 @@ vim.opt.shiftwidth = 4
 vim.opt.shiftround = true
 vim.opt.spell = false
 
-
-
-
 vim.opt.ruler = true
 vim.opt.list = true
 vim.opt.iskeyword:append("-")
@@ -75,10 +70,4 @@ vim.opt.termguicolors = true
 vim.opt.textwidth = 120
 
 vim.opt.completeopt = "menuone,noinsert,noselect"
-
 vim.opt.shortmess:append("c")
-
--- local function numbertoggle()
---     -- Adjust boolean arguments as needed
---     return vim.api.nvim_replace_termcodes(str, true, true, true)
--- end
