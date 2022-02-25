@@ -42,4 +42,12 @@ require("packer").startup(function(use)
         "rcarriga/nvim-dap-ui",
         requires = {"mfussenegger/nvim-dap"}
     })
+    use({
+        'saecki/crates.nvim',
+        event = {"BufRead Cargo.toml"},
+        requires = {{'nvim-lua/plenary.nvim'}},
+        config = function()
+            require('crates').setup()
+        end
+    })
 end)

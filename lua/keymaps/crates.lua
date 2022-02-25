@@ -1,0 +1,13 @@
+local nnoremap = require("utils/nnoremap")
+local vnoremap = require("utils/vnoremap")
+
+nnoremap([[<leader>ct]], [[:lua require('crates').toggle()<cr>]])
+nnoremap([[<leader>cr]], [[:lua require('crates').reload()<cr>]])
+nnoremap([[<leader>cv]], [[:lua require('crates').show_versions_popup()<cr>]])
+nnoremap([[<leader>cf]], [[:lua require('crates').show_features_popup()<cr>]])
+nnoremap([[<leader>cu]], [[:lua require('crates').update_crate()<cr>]])
+vnoremap([[<leader>cu]], [[:lua require('crates').update_crates()<cr>]])
+nnoremap([[<leader>ca]], [[:lua require('crates').update_all_crates()<cr>]])
+nnoremap([[<leader>cU]], [[:lua require('crates').upgrade_crate()<cr>]])
+vnoremap([[<leader>cU]], [[:lua require('crates').upgrade_crates()<cr>]])
+nnoremap([[<leader>cA]], [[:lua require('crates').upgrade_all_crates()<cr>]])
