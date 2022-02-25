@@ -1,0 +1,23 @@
+require("globals")
+require("vim_g")
+require("settings")
+require("mappings")
+require("autocmd")
+require("theme")
+-- Install Plugins
+require("packages")
+-- Init Plugins
+require("plugins/hop")
+require("plugins/statusline")
+require("plugins/nvim-autopairs")
+require("plugins/bufferline")
+require("plugins/tab_manager")
+require("plugins/nvim-colorizer")
+require("plugins/nvim-tree")
+-- Auto Completions and LSP
+require("plugins/cmp")
+require("plugins/gitsigns")
+require("plugins/rusty-tools")
+require("plugins/nvim-dap-ui")
+require("plugins/null-ls")
+require("utils/telescope")
