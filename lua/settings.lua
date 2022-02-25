@@ -1,21 +1,10 @@
-vim.opt.undodir = os.getenv ( "HOME" ) .. "/.undodir"
-vim.opt.undofile = true
-vim.opt.showmatch = true
-vim.api.nvim_command([[:highlight Search cterm=underline]])
-vim.opt.incsearch = true
-vim.opt.hlsearch = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
-vim.opt.syntax = "enable"
-vim.opt.compatible = false
 -- filetype plugin indent on
 vim.opt.formatoptions:remove([[cro]])
 vim.opt.wrap = false
 vim.opt.modeline = true
 vim.opt.linespace = 0
 vim.opt.relativenumber = true
-vim.api.nvim_command([[:set nonumber]])
+-- vim.api.nvim_command([[:set nonumber]])
 
 vim.api.nvim_command([[:set nojoinspaces]])
 vim.opt.mouse = "a"
@@ -71,3 +60,20 @@ vim.opt.textwidth = 120
 
 vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.shortmess:append("c")
+
+vim.opt.incsearch = true
+vim.opt.hlsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.syntax = "enable"
+vim.opt.compatible = false
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.api.nvim_command([[set fillchars+=stl:\ ,stlnc:\]])
+vim.api.nvim_command([[hi VertSplit cterm=none ctermfg=red ctermbg=none]])
+
+vim.opt.undodir = os.getenv ( "HOME" ) .. "/.undodir"
+vim.opt.undofile = true
+vim.opt.showmatch = true
+vim.api.nvim_command([[:highlight Search cterm=underline]])
