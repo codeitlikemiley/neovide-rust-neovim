@@ -25,5 +25,3 @@ nnoremap("<esc>", ":noh<return><esc>")
 
 -- Yank Whole Line
 nnoremap("Y", "y$<CR>")
-
-

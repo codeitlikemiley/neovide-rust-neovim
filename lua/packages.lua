@@ -26,9 +26,10 @@ require("packer").startup(function(use)
     use("hrsh7th/vim-vsnip")
     -- Git
     use("lewis6991/gitsigns.nvim")
+    use("mattn/webapi-vim")
     -- Language Servers
     use("neovim/nvim-lspconfig")
-    use("jose-elias-alvarez/null-ls.nvim")
+    -- use("jose-elias-alvarez/null-ls.nvim")
     use("simrat39/rust-tools.nvim")
     -- Easy Motion
     use("phaazon/hop.nvim")
@@ -42,12 +43,11 @@ require("packer").startup(function(use)
         "rcarriga/nvim-dap-ui",
         requires = {"mfussenegger/nvim-dap"}
     })
-    use({
+    use {
         'saecki/crates.nvim',
-        event = {"BufRead Cargo.toml"},
-        requires = {{'nvim-lua/plenary.nvim'}},
+        requires = { 'nvim-lua/plenary.nvim' },
         config = function()
             require('crates').setup()
-        end
-    })
+        end,
+    }
 end)
