@@ -10,8 +10,8 @@ local opts = {
         inlay_hints = {
             show_parameter_hints = false,
             parameter_hints_prefix = "",
-            other_hints_prefix = "",
-        },
+            other_hints_prefix = ""
+        }
     },
     -- all the opts to send to nvim-lspconfig
     -- these override the defaults set by rust-tools.nvim
@@ -19,6 +19,9 @@ local opts = {
     server = {
         -- on_attach is a callback called when the language server attachs to the buffer
         -- on_attach = on_attach,
+
+        -- we assume all project are made by cargo, but just in case pure rust files are used
+        -- we make a binding [,rs] comma rs to startstandalone server and kill rust analyzer
         standalone = false,
 
         settings = {
@@ -28,8 +31,8 @@ local opts = {
                 -- enable clippy on save
                 checkOnSave = {
                     command = "clippy"
-                },
-            },
+                }
+            }
         }
     },
     dap = {
