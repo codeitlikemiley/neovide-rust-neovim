@@ -15,6 +15,12 @@ require("packer").startup(function(use)
     use({"famiu/feline.nvim"})
     -- Tab / Buffer
     use("akinsho/nvim-bufferline.lua")
+    -- Git
+    use("lewis6991/gitsigns.nvim")
+    use("mattn/webapi-vim")
+    -- Language Servers
+    use("neovim/nvim-lspconfig") -- required by nvim-cmp
+    -- use("jose-elias-alvarez/null-ls.nvim")
     -- Completion
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-nvim-lsp")
@@ -24,12 +30,7 @@ require("packer").startup(function(use)
     -- Snippets
     use("hrsh7th/cmp-vsnip")
     use("hrsh7th/vim-vsnip")
-    -- Git
-    use("lewis6991/gitsigns.nvim")
-    use("mattn/webapi-vim")
-    -- Language Servers
-    use("neovim/nvim-lspconfig")
-    -- use("jose-elias-alvarez/null-ls.nvim")
+    -- Rust
     use("simrat39/rust-tools.nvim")
     -- Easy Motion
     use("phaazon/hop.nvim")
@@ -45,9 +46,9 @@ require("packer").startup(function(use)
     })
     use {
         'saecki/crates.nvim',
-        requires = { 'nvim-lua/plenary.nvim' },
+        requires = {'nvim-lua/plenary.nvim'},
         config = function()
             require('crates').setup()
-        end,
+        end
     }
 end)

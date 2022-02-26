@@ -16,7 +16,7 @@ require("plugins/nvim-colorizer")
 require("plugins/nvim-tree")
 -- Auto Completions and LSP
 require("plugins/rusty-tools")
-require("plugins/lspconfig")
+-- require("plugins/lspconfig")
 require("plugins/cmp")
 require("plugins/gitsigns")
 require("plugins/nvim-dap-ui")
