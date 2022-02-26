@@ -18,15 +18,14 @@ require("packer").startup(function(use)
     -- Git
     use("lewis6991/gitsigns.nvim")
     use("mattn/webapi-vim")
-    -- Language Servers
-    use("neovim/nvim-lspconfig") -- required by nvim-cmp
-    -- use("jose-elias-alvarez/null-ls.nvim")
-    -- Completion
+    -- Auto Completion
     use("hrsh7th/nvim-cmp")
+    -- Language Servers
+    use("neovim/nvim-lspconfig")
+    -- List of Completions
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-buffer")
-    use("hrsh7th/cmp-emoji")
     -- Snippets
     use("hrsh7th/cmp-vsnip")
     use("hrsh7th/vim-vsnip")
