@@ -21,4 +21,5 @@ require("plugins/cmp")
 require("plugins/gitsigns")
 require("plugins/nvim-dap-ui")
 require("plugins/cargo_crates")
+-- add here telescope, we need to create it
 require("utils/telescope")
