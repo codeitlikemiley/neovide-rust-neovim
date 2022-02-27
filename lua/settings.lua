@@ -71,9 +71,14 @@ vim.opt.compatible = false
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.api.nvim_command([[set fillchars+=stl:\ ,stlnc:\]])
-vim.api.nvim_command([[hi VertSplit cterm=none ctermfg=red ctermbg=none]])
+vim.api.nvim_command([[hi VertSplit cterm=none ctermfg=none ctermbg=none]])
+vim.opt.signcolumn = "yes"
 
-vim.opt.undodir = os.getenv ( "HOME" ) .. "/.undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.undodir"
 vim.opt.undofile = true
 vim.opt.showmatch = true
 vim.api.nvim_command([[:highlight Search cterm=underline]])
+
+if vim.fn.exists('neovide') == 1 then
+    vim.api.nvim_command([[:highlight Normal guibg=NONE ctermbg=NONE]])
+end

@@ -1,7 +1,7 @@
 local nnoremap = require("utils/nnoremap")
 
 -- Previous
-nnoremap([[bp]], [[::bprevious<CR>]])
+nnoremap([[bp]], [[:bprevious<CR>]])
 -- Next
 nnoremap([[bn]], [[:bnext<CR>]])
 -- List

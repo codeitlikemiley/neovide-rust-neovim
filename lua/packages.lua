@@ -11,8 +11,10 @@ require("packer").startup(function(use)
     -- Theme
     use("norcalli/nvim-colorizer.lua")
     use({"mhartington/oceanic-next"})
+    -- use({"ellisonleao/gruvbox.nvim"})
     use("kyazdani42/nvim-web-devicons")
     use({"famiu/feline.nvim"})
+    use({"xiyaowong/nvim-transparent"})
     -- Tab / Buffer
     use("akinsho/nvim-bufferline.lua")
     -- Git
@@ -30,12 +32,17 @@ require("packer").startup(function(use)
     use("hrsh7th/cmp-vsnip")
     use("hrsh7th/vim-vsnip")
     -- Rust
+    -- add this so we can test under cursor with RustTest
+    use("rust-lang/rust.vim")
     use("simrat39/rust-tools.nvim")
     -- Easy Motion
     use("phaazon/hop.nvim")
 
     -- Fuzzy Finder Search
-    use("nvim-telescope/telescope.nvim")
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/plenary.nvim'}}
+    }
     -- Debugging
     use("mfussenegger/nvim-dap")
     use("onsails/lspkind-nvim")

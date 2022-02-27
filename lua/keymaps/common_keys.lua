@@ -6,6 +6,7 @@ vim.g.mapleader = " "
 
 -- Disable Ctrl +Z
 nnoremap("<C-z>", [[<nop>]])
+-- Quick Replace of Word
 nnoremap("S", [[:%s//g<Left><Left>]])
 
 nnoremap(",<leader>", [[:set hlsearch!<CR>]])
