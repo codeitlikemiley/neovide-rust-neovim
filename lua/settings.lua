@@ -4,7 +4,6 @@ vim.opt.wrap = false
 vim.opt.modeline = true
 vim.opt.linespace = 0
 vim.opt.relativenumber = true
--- vim.api.nvim_command([[:set nonumber]])
 
 vim.api.nvim_command([[:set nojoinspaces]])
 vim.opt.mouse = "a"
