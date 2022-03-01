@@ -3,11 +3,11 @@ require("packer").startup(function(use)
     -- lua functions
     use("nvim-lua/plenary.nvim")
     -- Must Have In VIM
-    use("tpope/vim-commentary")
     use({"mbbill/undotree"})
     use("kyazdani42/nvim-tree.lua")
     use("windwp/nvim-autopairs")
     use("liuchengxu/vim-which-key")
+    use("terrortylor/nvim-comment")
     -- Theme
     use("norcalli/nvim-colorizer.lua")
     use({"mhartington/oceanic-next"})
@@ -24,10 +24,12 @@ require("packer").startup(function(use)
     use("hrsh7th/nvim-cmp")
     -- Language Servers
     use("neovim/nvim-lspconfig")
+    use("onsails/lspkind-nvim")
     -- List of Completions
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-buffer")
+    use("hrsh7th/cmp-cmdline")
     -- Snippets
     use("hrsh7th/cmp-vsnip")
     use("hrsh7th/vim-vsnip")
@@ -39,17 +41,21 @@ require("packer").startup(function(use)
     use("phaazon/hop.nvim")
 
     -- Fuzzy Finder Search
+    use{'RishabhRD/popfix'}
+    use {'hood/popui.nvim',
+        requires = {'RishabhRD/popfix'}
+    }
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/plenary.nvim'}}
     }
+    use {'nvim-telescope/telescope-ui-select.nvim' }
     -- Debugging
-    use("mfussenegger/nvim-dap")
-    use("onsails/lspkind-nvim")
-    use({
-        "rcarriga/nvim-dap-ui",
-        requires = {"mfussenegger/nvim-dap"}
-    })
+    use {
+        'mfussenegger/nvim-dap',
+        requires = {{'nvim-lua/plenary.nvim'}}
+    }
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     use {
         'saecki/crates.nvim',
         requires = {'nvim-lua/plenary.nvim'},

@@ -7,14 +7,14 @@ nnoremap([[<leader>fh]], [[<cmd>lua require('telescope.builtin').help_tags()<cr>
 
 if vim.fn.exists('neovide') == 1 then
     nnoremap([[<D-f>]], [[<cmd>lua require('telescope.builtin').find_files()<cr>]])
-    nnoremap([[<D-g>]], [[<cmd>lua require('telescope.builtin').live_grep()<cr>]])
-    nnoremap([[<D-b>]], [[<cmd>lua require('telescope.builtin').buffers()<cr>]])
-    nnoremap([[<D-F4>]], [[<cmd>lua require('telescope.builtin').help_tags()<cr>]])
+    -- nnoremap([[]], [[<cmd>lua require('telescope.builtin').live_grep()<cr>]])
+    nnoremap([[<D-g>]], [[<cmd>lua require('telescope.builtin').buffers()<cr>]])
+    -- nnoremap([[]], [[<cmd>lua require('telescope.builtin').help_tags()<cr>]])
 
     nnoremap("<D-a>", ":Telescope lsp_code_actions<CR>", true)
     nnoremap("<D-p>", ":Telescope jumplist<CR>", true)
     nnoremap("<D-m>", ":Telescope marks<CR>", true)
-    nnoremap("<D-/>", ":Telescope current_buffer_fuzzy_find<CR>", true)
+    -- nnoremap("", ":Telescope current_buffer_fuzzy_find<CR>", true)
     nnoremap("<D-i>", ":Telescope lsp_implementations<CR>", true)
     nnoremap("<D-e>", ":Telescope lsp_type_definitions<CR>", true)
     nnoremap("<D-t>", ":Telescope lsp_dynamic_workspace_symbols<CR>", true)

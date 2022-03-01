@@ -1,17 +1,45 @@
 -- Update this path
 local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.6.10/'
 local codelldb_path = extension_path .. 'adapter/codelldb'
-local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+local liblldb_path = extension_path .. 'lldb/lib/liblldb.dylib'
 
 local opts = {
     tools = { -- rust-tools options
         autoSetHints = true,
         hover_with_actions = true,
+        runnables = {
+            -- whether to use telescope for selection menu or not
+            use_telescope = true
+        },
+        debuggables = {
+            use_telescope = true
+        },
         inlay_hints = {
-            show_parameter_hints = false,
-            parameter_hints_prefix = "",
-            other_hints_prefix = ""
-        }
+            only_current_line = false,
+            only_current_line_autocmd = "CursorHold",
+            show_parameter_hints = true,
+            parameter_hints_prefix = "👈 ",
+            show_variable_name = false,
+            other_hints_prefix = "👉 ",
+            max_len_align_padding = 1,
+            right_align = false,
+            right_align_padding = 7,
+            highlight = "Comment",
+        },
+        hover_actions = {
+            -- the border that is used for the hover window
+            -- see vim.api.nvim_open_win()
+            border = {
+                {"╭", "FloatBorder"}, {"─", "FloatBorder"},
+                {"╮", "FloatBorder"}, {"│", "FloatBorder"},
+                {"╯", "FloatBorder"}, {"─", "FloatBorder"},
+                {"╰", "FloatBorder"}, {"│", "FloatBorder"}
+            },
+
+            -- whether the hover action window gets automatically focused
+            auto_focus = false
+        },
+
     },
     -- all the opts to send to nvim-lspconfig
     -- these override the defaults set by rust-tools.nvim
@@ -37,6 +65,7 @@ local opts = {
     },
     dap = {
         adapter = require('rust-tools.dap').get_codelldb_adapter(codelldb_path, liblldb_path)
+
     }
 }
 
