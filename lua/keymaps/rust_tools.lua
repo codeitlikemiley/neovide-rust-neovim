@@ -15,6 +15,7 @@ nnoremap([[<D-F3>]], [[:lua require'dap'.step_out()<CR>]],true)
 nnoremap([[<D-F4>]], [[:lua require'dap'.close()<CR>]],true)
 nnoremap([[<D-`>]], [[:lua require'dapui'.toggle()<CR>]],true)
 
+nnoremap([[<D-c>]], [[:RustPlay<CR>]],true)
 nnoremap([[<F11>]], [[:lua require'dap'.repl.toggle()<CR>]],true)
 nnoremap([[<D-F11>]], [[:lua require'dap'.repl.close()<CR>]],true)
 nnoremap([[<F12>]], [[:lua require'dap'.continue()<CR>]],true)
