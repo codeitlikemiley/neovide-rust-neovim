@@ -2,6 +2,8 @@
 local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.6.10/'
 local codelldb_path = extension_path .. 'adapter/codelldb'
 local liblldb_path = extension_path .. 'lldb/lib/liblldb.dylib'
+local nnoremap = require("utils/nnoremap")
+local custom_attach = require("keymaps/rust_tools")
 
 local opts = {
     tools = { -- rust-tools options
@@ -14,6 +16,7 @@ local opts = {
         debuggables = {
             use_telescope = true
         },
+        executor = require("rust-tools/executors").termopen,
         inlay_hints = {
             only_current_line = false,
             only_current_line_autocmd = "CursorHold",
@@ -46,7 +49,7 @@ local opts = {
     -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
     server = {
         -- on_attach is a callback called when the language server attachs to the buffer
-        -- on_attach = on_attach,
+        on_attach = custom_attach,
 
         -- we assume all project are made by cargo, but just in case pure rust files are used
         -- we make a binding [,rs] comma rs to startstandalone server and kill rust analyzer

@@ -12,7 +12,7 @@ vim.opt.hidden = true
 vim.opt.cmdheight = 2
 vim.opt.timeoutlen = 500
 vim.opt.updatetime = 300
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "80"
 vim.api.nvim_command([[:set display+=lastline]])
 vim.opt.startofline = false
 vim.opt.errorbells = false
@@ -55,7 +55,7 @@ vim.opt.showtabline = 4
 vim.opt.clipboard = "unnamedplus"
 vim.opt.autochdir = true
 vim.opt.termguicolors = true
-vim.opt.textwidth = 120
+vim.opt.textwidth = 80
 
 vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.shortmess:append("c")

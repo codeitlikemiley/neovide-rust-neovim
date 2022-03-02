@@ -39,11 +39,13 @@ require("packer").startup(function(use)
     use("simrat39/rust-tools.nvim")
     -- Easy Motion
     use("phaazon/hop.nvim")
-
-    -- Fuzzy Finder Search
-    use{'RishabhRD/popfix'}
-    use {'hood/popui.nvim',
-        requires = {'RishabhRD/popfix'}
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+    use {
+        'nvim-treesitter/nvim-treesitter-refactor',
+        requires = {{'nvim-treesitter/nvim-treesitter'}}
     }
     use {
         'nvim-telescope/telescope.nvim',
