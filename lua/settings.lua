@@ -11,7 +11,7 @@ vim.api.nvim_command([[:set list]])
 vim.opt.hidden = true
 vim.opt.cmdheight = 2
 vim.opt.timeoutlen = 500
-vim.opt.updatetime = 300
+vim.opt.updatetime = 100
 vim.opt.colorcolumn = "80"
 vim.api.nvim_command([[:set display+=lastline]])
 vim.opt.startofline = false

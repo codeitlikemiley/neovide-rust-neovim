@@ -14,6 +14,7 @@ require("keymaps/tab_manager")
 -- Plugins
 require("keymaps/undo_tree")
 require("keymaps/smart_quit")
+require("keymaps/marks")
 require("keymaps/nvim_tree_cmd")
 require("keymaps/lsp_keymap")
 require("keymaps/hop")
