@@ -67,4 +67,8 @@ require("packer").startup(function(use)
             require('crates').setup()
         end
     }
+    use({
+        'mrjones2014/dash.nvim',
+        run = 'make install',
+      })
 end)
