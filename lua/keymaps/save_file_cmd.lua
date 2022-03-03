@@ -7,7 +7,7 @@ if vim.fn.has('macunix') == 1 and vim.fn.exists('neovide') == 1 or vim.fn.has('g
     vnoremap("<D-s>", "<C-C>:update<CR>")
     inoremap("<D-s>", "<C-O>:update<CR>")
 else
-    noremap("<C-s>", ":update<CR>")
+    nnoremap("<C-s>", ":update<CR>")
     vnoremap("<C-s>", "<C-C>:update<CR>")
     inoremap("<C-s>", "<C-O>:update<CR>")
 end
