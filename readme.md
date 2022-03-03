@@ -18,6 +18,8 @@ You will need to install some dependencies
 
 1. Rust Install it, if you dont now how click ->  [Rust with RustUp Install](https://www.rust-lang.org/tools/install)
 
+1. Install [Packer](https://github.com/wbthomason/packer.nvim)
+
 1. Download and Install [Neovide](https://github.com/neovide/neovide/releases)
 
 1. Set Up your Executable Path ,and Font use [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
