@@ -2,7 +2,7 @@ local nnoremap = require("utils/nnoremap")
 local vnoremap = require("utils/vnoremap")
 
 -- Be more Productive when Using Neovide with the ff Keybindings
-if vim.fn.exists('neovide') == 1 then
+if vim.fn.has('macunix') == 1 and vim.fn.exists('neovide') == 1 or vim.fn.has('gui_running') == 1 then
     nnoremap("<D-r>", "<cmd>lua vim.lsp.buf.rename()<CR>", true)
     nnoremap("<D-d>", "<cmd>lua vim.lsp.buf.hover()<CR>", true)
     nnoremap("<D-,>", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", true)

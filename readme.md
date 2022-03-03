@@ -25,12 +25,19 @@ vim.opt.guifont = "Hack Nerd Font Mono:12"
 
 1. Create .undodir folder in `$HOME/.undodir`
 
-1. Disable Mac Specific keybindings like CMD == <D-KEY> and OPT if your on linux or mac
+1. Override Some Keys You want:
+
+Meta Key can be used in any OS, im mac its CMD key, windows and Linux is Super
+
+- I Bet in linux your super key like me is already binded to your window manager
+- Same Goes for Windows , not unless you configure it using powertoys and autohotkey
+- you can SWAP <D-ANY_KEY> to <M-ANY_KEY> usually its ALT in both linux and Windows
+- example below is using Option Key on MACOS
 
 `./lua/keymaps/move_lines.lua`
 ```lua
 -- This is MACOS Specific Keybinding OPT+[jk]
--- Disable this if your not using MACOS
+-- Create your own in windows :) by replacing this
 nnoremap("∆",[[ :m .+1<CR>==]])
 nnoremap ("˚",[[ :m .-2<CR>==]])
 inoremap("∆",[[<Esc>:m .+1<CR>==gi]])
@@ -41,7 +48,7 @@ vnoremap("˚", [[:m '<-2<CR>gv=gv]])
 
 `./lua/keymaps/system_clipboard.lua`
 ```lua
-if vim.fn.exists('neovide') == 1 then
+if vim.fn.has('macunix') == 1 and vim.fn.exists('neovide') == 1 or vim.fn.has('gui_running') == 1 then
     vim.cmd [[
     nnoremap <D-v> "+p
     inoremap <D-v> <c-r>+

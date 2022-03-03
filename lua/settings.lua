@@ -78,6 +78,6 @@ vim.opt.undofile = true
 vim.opt.showmatch = true
 vim.api.nvim_command([[:highlight Search cterm=underline]])
 
-if vim.fn.exists('neovide') == 1 then
+if vim.fn.exists('neovide') == 1 or vim.fn.has('gui_running') == 1 then
     vim.api.nvim_command([[:highlight Normal guibg=NONE ctermbg=NONE]])
 end
