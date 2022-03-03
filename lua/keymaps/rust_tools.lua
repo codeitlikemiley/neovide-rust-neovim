@@ -14,16 +14,15 @@ local custom_attach = function(client)
         nnoremap([[<D-F3>]], [[:lua require'dap'.step_into()<CR>]], true)
         nnoremap([[<D-F4>]], [[:lua require'dap'.step_out()<CR>]], true)
         nnoremap([[<D-F5>]], [[:lua require'dap'.close()<CR>]], true)
+
         nnoremap([[<D-`>]], [[:lua require'dapui'.toggle()<CR>]], true)
+        nnoremap([[<D-F8>]], [[:lua require'dap'.repl.close()<CR>]], true)
 
         nnoremap([[<D-c>]], [[:RustPlay<CR>]], true)
-        nnoremap([[<F8>]], [[:lua require'dap'.repl.toggle()<CR>]], true)
-        nnoremap([[<D-F8>]], [[:lua require'dap'.repl.close()<CR>]], true)
-        nnoremap([[<F6>]], [[:execute "RustStartStandaloneServerForBuffer" | LspStop<CR>]], true)
     end
     -- Available CMD keys as of now
     --   '
-    -- F5 - F11
+    -- F9, F10, F11, F12
 
     -- Productive Rust Bindings Run and Test Under Cursor
     nnoremap([[<F1>]], [[:RustRun<CR>]], true)
@@ -31,12 +30,15 @@ local custom_attach = function(client)
     -- works only with rust analyzer , we can choose what test to run
     nnoremap([[<F3>]], [[:RustRunnables<CR>]], true)
     nnoremap([[<F5>]], [[:RustDebuggables<CR>]], true)
+    nnoremap([[<F6>]], [[:execute "RustStartStandaloneServerForBuffer" | LspStop<CR>]], true)
     -- Reload Workspace
     nnoremap([[<F7>]], [[:RustReloadWorkspace<CR>]], true)
+    nnoremap([[<F8>]], [[:lua require'dap'.repl.toggle()<CR>]], true)
+    nnoremap([[<F9>]], [[:!cargo test -- --ignored<CR>]], true)
     -- if cargo.toml exists run test under cursor, but for stand alone all test are run
-    nnoremap([[,rt]], [[:RustTest<CR>]], true)
+    nnoremap([[,rt]], [[:RustRunnables<CR>]], true)
+    nnoremap([[,rd]], [[:RustDebuggables<CR>]], true)
     nnoremap([[,em]], [[:RustExpandMacro<CR>]], true)
-    -- nnoremap("<F12>", ":!cargo test -- --ignored<CR>")
 
     -- Rust File Only
     nnoremap([[,rs]], [[:execute "RustStartStandaloneServerForBuffer" | LspStop<CR>]])

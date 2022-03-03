@@ -14,9 +14,11 @@ You will need to install some dependencies
 
 
 ## Setting up for your own Use
+1. Im assuming you already have neovim Installed on your system. Make sure you Install **[NEOVIM](https://neovim.io)**
 
-1. Make sure you Install **[NEOVIM](https://neovim.io)** , [Rust with RustUp](https://www.rust-lang.org/tools/install)
+1. Rust Install it, if you dont now how click ->  [Rust with RustUp Install](https://www.rust-lang.org/tools/install)
 
+1. Download and Install [Neovide](https://github.com/neovide/neovide/releases)
 
 1. Set Up your Executable Path ,and Font use [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
 
@@ -61,18 +63,54 @@ vnoremap("˚", [[:m '<-2<CR>gv=gv]])
 
 1. Install Neovim Plugin with Packer run `:PackerInstall` or `:PackerSync`
 
+1. For Rust Formatting , Intellisense ,Test to work
+
+you need to install rust `fmt`, `clippy`, `rust-analyzer` we assume you already have set up rustc, rustup and cargo
+
+- `rustup component add rustfmt`
+-  `rustup component add clippy`
+- for [rust analyzer click here](https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary)
+
+1. For Debugger to Work you need to [Download CODELLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
+
+1. Update Path for CodeLLDB
+
+`./lua/plugins/rusty-tools.lua`
+
+```lua
+-- Update this path
+local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.6.10/'
+local codelldb_path = extension_path .. 'adapter/codelldb'
+local liblldb_path = extension_path .. 'lldb/lib/liblldb.dylib' -- this is a  *.so file on windows/linux
+local nnoremap = require("utils/nnoremap")
+local custom_attach = require("keymaps/rust_tools")
+```
+
+1. To make Rust Play works which is binded on CMD+C (ONLY FOR LINUX AND MAC USERS)
+
+-  you need to update `vim_g.lua`
+
+```lua
+let g:rust_clip_command = 'xclip -selection clipboard'
+```
+
 ## Productivity First Keybindings
 
 ###  legends
 - [r] - enabled only on Rust Projects
 - [g] - generals purpose key bindings
 #### Rust Run/Test [r]
-- F1 = run rust program
-- F2 = run test under cursor on cargo project, and all test on single rs file
+- F1 = Rust Run
+- F2 = Rust Run Test Under Cursor (only for Cargo projects, defaults to running all test for single file .rs)
 - F3 = Rust Runnables
 - F4 = Undo Tree Toggle (Not Rust Related) [g]
-- F5 = Rust Debuggables
+- F5 = Rust Debuggables (Rust Debugger)
 - F6 = Start Stand Alone Rust Server for Single File
+- F7 = Reload Rust Workspace
+- F8 = Toggle DAP REPL
+- F9 = Run ONLY IGNORED Test
+
+- CMD + C = Copy Rust File Content to Rust Playground
 
 #### Debugger [r]
 - CMD + ` = toggle Debugger UI
@@ -81,6 +119,7 @@ vnoremap("˚", [[:m '<-2<CR>gv=gv]])
 - CMD + F3 = Debug Step Into
 - CMD + F4 = Debug Step Out
 - CMD + F5 = Close DAP
+- CMD + F8 = Close DAP REPL
 - CMD + X = Toggle Breakpoint
 
 #### Pane Navigation [g]
