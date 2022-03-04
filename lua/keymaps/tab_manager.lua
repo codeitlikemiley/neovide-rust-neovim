@@ -10,8 +10,9 @@ nnoremap([[<space>7]],[[7gt<cr>]])
 nnoremap([[<space>8]],[[8gt<cr>]])
 nnoremap([[<space>9]],[[9gt<cr>]])
 nnoremap([[<space>0]],[[10gt<cr>]])
-nnoremap([[<space>t]],[[:tabnew<cr>]])
-nnoremap([[<space>q]],[[:tabonly<cr>]])
+nnoremap([[<leader>n]],[[:tabnew<cr>]])
+nnoremap([[,qt]],[[:tabonly<cr>]])
+nnoremap([[<leader>q]],[[:tabclose<cr>]])
 
 
 if vim.fn.has('macunix') == 1 and vim.fn.exists('neovide') == 1 or vim.fn.has('gui_running') == 1 then

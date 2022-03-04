@@ -19,6 +19,20 @@ local custom_attach = function(client)
         nnoremap([[<D-F8>]], [[:lua require'dap'.repl.close()<CR>]], true)
 
         nnoremap([[<D-c>]], [[:RustPlay<CR>]], true)
+    else
+        nnoremap([[<leader>']], [[:RustToggleInlayHints<CR>]], true)
+        nnoremap("<leader>x", [[:lua require'dap'.toggle_breakpoint()<CR>]], true)
+        nnoremap([[<leader>\]], [[:RustParentModule<CR>]], true)
+        nnoremap("<leader>[", [[:RustMoveItemDown<CR>]], true)
+        nnoremap("<leader>]", [[:RustMoveItemUp<CR>]], true)
+        nnoremap([[<leader><F1>]], [[:lua require'dap'.continue()<CR>]], true)
+        nnoremap([[<leader><F2>]], [[:lua require'dap'.step_over()<CR>]], true)
+        nnoremap([[<leader><F3>]], [[:lua require'dap'.step_into()<CR>]], true)
+        nnoremap([[<leader><F4>]], [[:lua require'dap'.step_out()<CR>]], true)
+        nnoremap([[<leader><F5>]], [[:lua require'dap'.close()<CR>]], true)
+        nnoremap([[<leader>`]], [[:lua require'dapui'.toggle()<CR>]], true)
+        nnoremap([[<leader><F8>]], [[:lua require'dap'.repl.close()<CR>]], true)
+        nnoremap([[<leader>c]], [[:RustPlay<CR>]], true)
     end
     -- Available CMD keys as of now
     --   '
