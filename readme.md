@@ -30,7 +30,6 @@ edit `vim_g.lua`
 vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
 vim.g.ruby_host_prog = "/usr/bin/ruby"
 vim.g.python_host_prog = "/Users/uriah/.pyenv/shims/python"
-vim.g.rustc_path = "/opt/homebrew/bin/rustc"
 vim.opt.guifont = "Hack Nerd Font Mono:12"
 ```
 

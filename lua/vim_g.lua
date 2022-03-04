@@ -12,7 +12,6 @@ vim.g.session_default_to_last = true
 vim.g.rust_clip_command = "pbcopy"
 vim.g.rustfmt_autosave = true
 vim.g.gruvbox_material_sign_column_background = "none"
-vim.g.rustc_path = "/opt/homebrew/bin/rustc"
 
 
 -- GUI config
