@@ -38,7 +38,7 @@ require("packer").startup(function(use)
     -- add this so we can test under cursor with RustTest
     use("rust-lang/rust.vim")
     use("simrat39/rust-tools.nvim")
-    use("chentau/marks.nvim")
+    use("chentoast/marks.nvim")
     -- Easy Motion
     use("phaazon/hop.nvim")
     use {
