@@ -8,7 +8,6 @@ local custom_attach = require("keymaps/rust_tools")
 local opts = {
     tools = { -- rust-tools options
         autoSetHints = true,
-        hover_with_actions = true,
         runnables = {
             -- whether to use telescope for selection menu or not
             use_telescope = true
