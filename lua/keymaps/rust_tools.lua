@@ -1,6 +1,7 @@
 local nnoremap = require("utils/nnoremap")
+local rt = require("rust-tools")
 
-local custom_attach = function(client)
+local custom_attach = function(_,bufnr)
 
     -- Neovide Productive Keybindings
     if vim.fn.has('macunix') == 1 and vim.fn.exists('neovide') == 1 or vim.fn.has('gui_running') == 1 then
@@ -14,7 +15,8 @@ local custom_attach = function(client)
         nnoremap([[<D-F3>]], [[:lua require'dap'.step_into()<CR>]], true)
         nnoremap([[<D-F4>]], [[:lua require'dap'.step_out()<CR>]], true)
         nnoremap([[<D-F5>]], [[:lua require'dap'.close()<CR>]], true)
-
+        vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+        vim.keymap.set("n", "<Leader>v", rt.hover_actions.hover_actions, { buffer = bufnr })
         nnoremap([[<D-`>]], [[:lua require'dapui'.toggle()<CR>]], true)
         nnoremap([[<D-F8>]], [[:lua require'dap'.repl.close()<CR>]], true)
 
